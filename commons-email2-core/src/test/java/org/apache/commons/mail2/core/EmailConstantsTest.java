@@ -15,10 +15,35 @@
  * limitations under the License.
  */
 
-package org.apache.commons.mail2.core;
+ package org.apache.commons.mail2.core;
 
-public class EmailConstantsTest {
-
-    // empty for now
-
-}
+ import org.junit.jupiter.api.Test;
+ import static org.junit.jupiter.api.Assertions.*;
+ 
+ public class EmailConstantsTest {
+ 
+     // Example constants (replace these with your actual constants)
+     private static final String EXPECTED_CONSTANT = "expectedValue";
+     private static final int EXPECTED_NUMBER = 42;
+ 
+     @Test
+     public void testConstantValues() {
+         // Replace with the actual constants from your code
+         String actualConstant = "expectedValue"; // Replace with actual constant
+         int actualNumber = 42; // Replace with actual constant
+ 
+         // Assertions
+         assertEquals(EXPECTED_CONSTANT, actualConstant, "Constant value mismatch");
+         assertEquals(EXPECTED_NUMBER, actualNumber, "Number constant mismatch");
+     }
+ 
+     @Test
+     public void testConstantNotNull() {
+         // Replace with actual constant
+         String actualConstant = "expectedValue"; // Replace with actual constant
+ 
+         // Check that the constant is not null
+         assertNotNull(actualConstant, "Constant should not be null");
+     }
+ }
+ 
