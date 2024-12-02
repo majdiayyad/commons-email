@@ -20,14 +20,14 @@
  import org.junit.jupiter.api.Test;
  import static org.junit.jupiter.api.Assertions.*;
  
- public class EmailConstantsTest {
+  class EmailConstantsTest {
  
      // Example constants (replace these with your actual constants)
      private static final String EXPECTED_CONSTANT = "expectedValue";
      private static final int EXPECTED_NUMBER = 42;
  
      @Test
-     public void testConstantValues() {
+      void testConstantValues() {
          // Replace with the actual constants from your code
          String actualConstant = "expectedValue"; // Replace with actual constant
          int actualNumber = 42; // Replace with actual constant
@@ -38,7 +38,7 @@
      }
  
      @Test
-     public void testConstantNotNull() {
+      void testConstantNotNull() {
          // Replace with actual constant
          String actualConstant = "expectedValue"; // Replace with actual constant
  
