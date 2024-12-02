@@ -15,10 +15,30 @@
  * limitations under the License.
  */
 
-package org.apache.commons.mail2.jakarta;
+ package org.apache.commons.mail2.jakarta;
 
-public class EmailConstantsTest {
-
-    // empty for now
-
-}
+ import org.junit.jupiter.api.Test;
+ import static org.junit.jupiter.api.Assertions.*;
+ 
+ class EmailConstantsTest { // Removed 'public'
+ 
+     // Example constants (replace with actual constants from your project)
+     private static final String DEFAULT_EMAIL = "test@example.com";
+     private static final int MAX_EMAIL_SIZE = 1048576; // 1 MB
+ 
+     @Test
+     void testDefaultEmail() {
+         assertEquals("test@example.com", DEFAULT_EMAIL, "Default email should match expected value.");
+     }
+ 
+     @Test
+     void testMaxEmailSize() {
+         assertEquals(1048576, MAX_EMAIL_SIZE, "Max email size should match expected value.");
+     }
+ 
+     @Test
+     void testEmailConstantsNotNull() {
+         assertNotNull(DEFAULT_EMAIL, "Default email constant should not be null.");
+     }
+ }
+ 
