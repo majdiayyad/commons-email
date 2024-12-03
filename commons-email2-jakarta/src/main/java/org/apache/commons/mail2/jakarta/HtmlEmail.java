@@ -197,19 +197,19 @@ public class HtmlEmail extends MultiPartEmail {
         MimeBodyPart msgHtml = null;
         MimeBodyPart msgText = null;
 
-        rootContainer.setSubType("mixed");
+        rootContainer.setSubType("MimeTypes.MIXED");
 
         // determine how to form multiparts of email
 
         if (EmailUtils.isNotEmpty(html) && !EmailUtils.isEmpty(inlineEmbeds)) {
             // If HTML body and embeds are used, create a related container and add it to the root container
-            bodyEmbedsContainer = new MimeMultipart("related");
+            bodyEmbedsContainer = new MimeMultipart("MimeTypes.RELATED");
             bodyContainer = bodyEmbedsContainer;
             addPart(bodyEmbedsContainer, 0);
 
             // If TEXT body was specified, create a alternative container and add it to the embeds container
             if (EmailUtils.isNotEmpty(text)) {
-                bodyContainer = new MimeMultipart("alternative");
+                bodyContainer = new MimeMultipart("MimeTypes.ALTERNATIVE");
                 final BodyPart bodyPart = createBodyPart();
                 try {
                     bodyPart.setContent(bodyContainer);
@@ -226,12 +226,12 @@ public class HtmlEmail extends MultiPartEmail {
             if (!EmailUtils.isEmpty(inlineEmbeds) || isBoolHasAttachments()) {
                 // If both HTML and TEXT bodies are provided, create an alternative
                 // container and add it to the root container
-                bodyContainer = new MimeMultipart("alternative");
+                bodyContainer = new MimeMultipart("MimeTypes.ALTERNATIVE");
                 this.addPart(bodyContainer, 0);
             } else {
                 // no attachments or embedded images present, change the mimetype
                 // of the root container (= body container)
-                rootContainer.setSubType("alternative");
+                rootContainer.setSubType("MimeTypes.ALTERNATIVE");
             }
         }
 
